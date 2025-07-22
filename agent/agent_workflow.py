@@ -4,10 +4,15 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from utils.model_loders import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 
+## Tools
+from tools.weather_info_tool import WeatherInfoTool
 
 class GraphBuilder():
     
     def __init__(self):
+        self.model_loder = ModelLoader()
+        self.llm = self.model_loder.load_llm()
+    
         self.tools = []
         self.system_prompt = SYSTEM_PROMPT
         self.llm_with_tools = ""
