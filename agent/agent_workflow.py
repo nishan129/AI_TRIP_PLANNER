@@ -14,6 +14,8 @@ class GraphBuilder():
         self.llm = self.model_loder.load_llm()
     
         self.tools = []
+        
+        self.weather_tools = WeatherInfoTool()
         self.system_prompt = SYSTEM_PROMPT
         self.llm_with_tools = ""
     
